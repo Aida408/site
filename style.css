@@ -79,15 +79,26 @@ p {
 
 /* Cat */
 
+
+.cat-video-wrapper {
+    display: flex;             /* ставим видео и кота в ряд */
+    gap: 20px;                 /* расстояние между видео и котом */
+    justify-content: flex-start; /* видео не по центру, слева */
+    align-items: flex-start;    /* верхнее выравнивание */
+}
+
+/* Видео */
+.cat-video {
+    width: 200px;             /* размер видео */
+    border-radius: 12px;      /* скругление, если нужно */
+}
+
+/* Кот */
 .cat {
     width: 250px;
-    margin: 10px 0;
     transition: width 0.4s ease;
 }
 
-.letter-window.final .cat {
-    width: 180px;
-}
 
 /* buttons */
 .buttons {
