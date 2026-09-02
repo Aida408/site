@@ -30,6 +30,18 @@
           <video id="letter-sticker" class="sticker" autoplay muted loop playsinline>
             <source src="sticker.webm" type="video/webm" />
           </video>
+
+          <!-- Появляется вместо стикера после Yes -->
+          <video
+            id="final-video"
+            class="final-video"
+            muted
+            loop
+            playsinline
+            style="display: none"
+          >
+            <source src="the-odyssey-batman.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <div class="buttons" id="letter-buttons">
@@ -40,17 +52,10 @@
           </div>
         </div>
 
-        <!-- Кот в углу письма -->
-        <img src="cat_heart.gif" class="cat" id="letter-cat" alt="" />
-
         <!-- Показывается после нажатия Yes -->
         <div id="final-text" class="final-text" style="display: none">
           <p class="final-kicker">Your voyage begins</p>
           <h2 class="final-heading">The Odyssey</h2>
-
-          <video id="final-video" class="final-video" muted loop playsinline>
-            <source src="the-odyssey-batman.mp4" type="video/mp4" />
-          </video>
 
           <p class="final-lead">
             <span class="lead-icon">🚀</span> Calling all newbies and everyone
@@ -63,6 +68,9 @@
           <p class="final-sign">See you there! 🎉</p>
         </div>
       </div>
+
+      <!-- Кот в углу экрана -->
+      <img src="cat_heart.gif" class="cat" id="letter-cat" alt="" />
     </div>
     <script src="script.js"></script>
   </body>

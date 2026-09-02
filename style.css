@@ -111,7 +111,8 @@ body {
     gap: 16px;
 }
 
-.sticker {
+.sticker,
+.final-video {
     flex: 0 0 auto;
     display: block;
     width: 280px;
@@ -119,14 +120,20 @@ body {
     height: auto;
 }
 
-/* Кот сидит в углу письма */
+.final-video {
+    border-radius: 4px;
+    box-shadow: 0 8px 22px rgba(74, 63, 53, 0.3);
+}
+
+/* Кот сидит в самом углу экрана */
 .cat {
     position: absolute;
-    right: 10px;
-    bottom: 8px;
-    width: 104px;
+    right: 16px;
+    bottom: 12px;
+    width: 130px;
     height: auto;
     pointer-events: none;
+    filter: drop-shadow(0 4px 10px rgba(74, 63, 53, 0.25));
     transition: width 0.4s ease;
 }
 
@@ -194,7 +201,7 @@ body {
 }
 
 .final-heading {
-    margin: 6px 0 0;
+    margin: 6px 0 20px;
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 600;
     font-size: clamp(30px, 6vw, 42px);
@@ -209,15 +216,6 @@ body {
     height: 1px;
     margin: 12px auto 0;
     background: var(--blush);
-}
-
-.final-video {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 18px 0 20px;
-    border-radius: 4px;
-    box-shadow: 0 8px 22px rgba(74, 63, 53, 0.3);
 }
 
 .final-lead {
@@ -275,8 +273,9 @@ body {
         gap: 14px;
     }
 
-    .sticker { width: 190px; }
-    .cat     { width: 74px; right: 4px; bottom: 4px; }
+    .sticker,
+    .final-video { width: 200px; }
+    .cat { width: 84px; right: 6px; bottom: 6px; }
     .btn     { width: 96px; }
     .buttons { gap: 18px; }
 
