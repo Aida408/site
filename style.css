@@ -67,6 +67,7 @@ body {
 }
 
 .letter-window {
+    position: relative;
     width: 100%;
     max-width: 640px;
     padding: 36px 32px 28px;
@@ -110,16 +111,22 @@ body {
     gap: 16px;
 }
 
-.sticker,
-.cat {
+.sticker {
     flex: 0 0 auto;
     display: block;
-    width: 170px;
+    width: 280px;
+    max-width: 100%;
     height: auto;
 }
 
+/* Кот сидит в углу письма */
 .cat {
-    width: 190px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    width: 104px;
+    height: auto;
+    pointer-events: none;
     transition: width 0.4s ease;
 }
 
@@ -268,8 +275,8 @@ body {
         gap: 14px;
     }
 
-    .sticker { width: 130px; }
-    .cat     { width: 140px; }
+    .sticker { width: 190px; }
+    .cat     { width: 74px; right: 4px; bottom: 4px; }
     .btn     { width: 96px; }
     .buttons { gap: 18px; }
 
