@@ -111,17 +111,11 @@ body {
 }
 
 .sticker,
-.final-video,
 .cat {
     flex: 0 0 auto;
     display: block;
     width: 170px;
     height: auto;
-}
-
-.final-video {
-    border-radius: 3px;
-    box-shadow: 0 6px 18px rgba(74, 63, 53, 0.28);
 }
 
 .cat {
@@ -183,6 +177,42 @@ body {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+.final-kicker {
+    margin: 0;
+    font-family: "Aldrich", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.final-heading {
+    margin: 6px 0 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.final-heading::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 1px;
+    margin: 12px auto 0;
+    background: var(--blush);
+}
+
+.final-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 20px;
+    border-radius: 4px;
+    box-shadow: 0 8px 22px rgba(74, 63, 53, 0.3);
+}
+
 .final-lead {
     margin: 0 0 20px;
     font-family: "Cormorant Garamond", Georgia, serif;
@@ -238,8 +268,7 @@ body {
         gap: 14px;
     }
 
-    .sticker,
-    .final-video { width: 130px; }
+    .sticker { width: 130px; }
     .cat     { width: 140px; }
     .btn     { width: 96px; }
     .buttons { gap: 18px; }
