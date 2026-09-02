@@ -4,7 +4,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("heart-bg.jpg");
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -85,12 +89,6 @@ p {
     gap: 20px;                 /* расстояние между видео и котом */
     justify-content: flex-start; /* видео не по центру, слева */
     align-items: flex-start;    /* верхнее выравнивание */
-}
-
-/* Видео */
-.cat-video {
-    width: 200px;             /* размер видео */
-    border-radius: 12px;      /* скругление, если нужно */
 }
 
 /* Кот */
