@@ -91,6 +91,12 @@ p {
     align-items: flex-start;    /* верхнее выравнивание */
 }
 
+/* Стикер */
+.sticker {
+    width: 200px;
+    height: auto;
+}
+
 /* Кот */
 .cat {
     width: 250px;
