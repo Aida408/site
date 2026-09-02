@@ -8,6 +8,8 @@ const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
+const sticker = document.getElementById("letter-sticker");
+const finalVideo = document.getElementById("final-video");
 
 // Click Envelope
 
@@ -69,4 +71,9 @@ yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
 
     finalText.style.display = "block";
+
+    // Стикер уступает место видео The Odyssey × Batman
+    sticker.style.display = "none";
+    finalVideo.style.display = "block";
+    finalVideo.play();
 });

@@ -111,11 +111,17 @@ body {
 }
 
 .sticker,
+.final-video,
 .cat {
     flex: 0 0 auto;
     display: block;
     width: 170px;
     height: auto;
+}
+
+.final-video {
+    border-radius: 3px;
+    box-shadow: 0 6px 18px rgba(74, 63, 53, 0.28);
 }
 
 .cat {
@@ -256,7 +262,8 @@ body {
         gap: 14px;
     }
 
-    .sticker { width: 130px; }
+    .sticker,
+    .final-video { width: 130px; }
     .cat     { width: 140px; }
     .btn     { width: 96px; }
     .buttons { gap: 18px; }
