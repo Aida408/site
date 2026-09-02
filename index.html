@@ -2,35 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Приглашение на тимбилдинг</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Odyssey — Team Building Invitation</title>
+    <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Cormorant+Garamond:wght@400;600&family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
   </head>
   <body>
     <!-- Envelope Screen -->
     <div id="envelope-container">
       <img src="envelope.png" alt="Envelope" id="envelope" />
-      <p>♡ Letter for You ♡</p>
+      <p>♡ An invitation for you ♡</p>
     </div>
 
     <!-- Letter Screen -->
     <div id="letter-container">
       <div class="letter-window">
-        <h1 id="letter-title">Придёте на тимбилдинг?</h1>
-<div class="cat-video-wrapper">
-        <!-- Стикер -->
-        <video id="letter-sticker" class="sticker" autoplay muted loop playsinline>
-          <source src="sticker.webm" type="video/webm" />
-        </video>
-        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+        <h1 id="letter-title">Will you come to the TB?</h1>
+
+        <!-- Стикер и кот в один ряд -->
+        <div class="media-row">
+          <video id="letter-sticker" class="sticker" autoplay muted loop playsinline>
+            <source src="sticker.webm" type="video/webm" />
+          </video>
+          <img src="cat_heart.gif" class="cat" id="letter-cat" alt="" />
+        </div>
 
         <div class="buttons" id="letter-buttons">
           <img src="yes.png" class="btn yes-btn" alt="Yes" />
@@ -40,9 +41,31 @@
           </div>
         </div>
 
-        <p id="final-text" class="final-text" style="display: none">
-           Приглашаем всех на тимбилдинг в стиле Одиссея
-        </p>
+        <!-- Показывается после нажатия Yes -->
+        <div id="final-text" class="final-text" style="display: none">
+          <p class="final-kicker">Your voyage begins</p>
+          <h2 class="final-heading">The Odyssey</h2>
+          <p class="final-lead">
+            A team-building evening in the spirit of Homer's Odyssey — trials to
+            face together, strange shores to explore, and a hero's welcome at
+            the end of it all.
+          </p>
+          <dl class="final-details">
+            <div class="detail">
+              <dt>When</dt>
+              <dd>5 September, 6:00 PM</dd>
+            </div>
+            <div class="detail">
+              <dt>Theme</dt>
+              <dd>Odyssey — gods, heroes, sirens &amp; sailors</dd>
+            </div>
+            <div class="detail">
+              <dt>Dress code</dt>
+              <dd>Come as your favourite legend</dd>
+            </div>
+          </dl>
+          <p class="final-sign">Set sail with us ♡</p>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>

@@ -1,68 +1,90 @@
+/* ─── Палитра ────────────────────────────────────────────────────────────── */
+:root {
+    --cream: #fdf8f1;
+    --parchment: rgba(253, 248, 241, 0.92);
+    --ink: #4a3f35;
+    --ink-soft: #7a6a5b;
+    --gold: #b9915c;
+    --blush: #e3b7ae;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 24px;
     background-image: url("background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: "Pixelify Sans", sans-serif;
+    color: var(--ink);
 }
 
-/* Envelope Screen */
+/* ─── Экран с конвертом ──────────────────────────────────────────────────── */
 #envelope-container {
     text-align: center;
-    cursor:pointer;
-}
-
-@keyframes pulse {
-    0% {
-        transform:scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#envelope{
-    width: 200px;
-    animation: pulse 1.5s infinite;
     cursor: pointer;
 }
 
-#letter-container{
+#envelope-container p {
+    margin: 18px 0 0;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-shadow: 0 1px 0 var(--cream);
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+#envelope {
+    width: 200px;
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+    filter: drop-shadow(0 6px 14px rgba(74, 63, 53, 0.25));
+}
+
+/* ─── Письмо ─────────────────────────────────────────────────────────────── */
+#letter-container {
     display: none;
-    position:fixed;
+    position: fixed;
     inset: 0;
     justify-content: center;
     align-items: center;
+    padding: 24px;
+    overflow-y: auto;
 }
 
-.letter-window{
-    width: 90vw;
-    max-width: 800px;
-    aspect-ratio: 3/2;
-    padding: 20px 20px 0 20px;
+.letter-window {
+    width: 100%;
+    max-width: 640px;
+    padding: 36px 32px 28px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 12px;
-    gap: 1px;
-    padding-top: 180px;
+    gap: 18px;
 
-    transform: scale(1.2);
+    background: var(--parchment);
+    border: 1px solid var(--gold);
+    outline: 6px solid var(--parchment);
+    box-shadow:
+        0 0 0 7px var(--gold),
+        0 18px 50px rgba(74, 63, 53, 0.35);
+    border-radius: 4px;
+
+    transform: scale(1.15);
     opacity: 0;
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
@@ -72,39 +94,36 @@ body {
     opacity: 1;
 }
 
-h1 {
-    font-size: 30px;
-    margin:0;
+#letter-title {
+    margin: 0;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
 }
 
-p {
-    font-size: 40px;
+/* ─── Стикер и кот ───────────────────────────────────────────────────────── */
+.media-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
 }
 
-/* Cat */
-
-
-.cat-video-wrapper {
-    display: flex;             /* ставим видео и кота в ряд */
-    gap: 20px;                 /* расстояние между видео и котом */
-    justify-content: flex-start; /* видео не по центру, слева */
-    align-items: flex-start;    /* верхнее выравнивание */
-}
-
-/* Стикер */
-.sticker {
-    width: 200px;
+.sticker,
+.cat {
+    flex: 0 0 auto;
+    display: block;
+    width: 170px;
     height: auto;
 }
 
-/* Кот */
 .cat {
-    width: 250px;
+    width: 190px;
     transition: width 0.4s ease;
 }
 
-
-/* buttons */
+/* ─── Кнопки ─────────────────────────────────────────────────────────────── */
 .buttons {
     display: flex;
     justify-content: center;
@@ -112,21 +131,16 @@ p {
     position: relative;
 }
 
-.no-wrapper{
-    position:relative;
+.no-wrapper {
+    position: relative;
 }
 
 .btn {
     width: 120px;
+    height: auto;
+    display: inline-block;
     cursor: pointer;
     user-select: none;
-}
-
-.yes-btn,
-.no-btn {
-width: 120px;
-height: auto;
-display: inline-block;
 }
 
 .yes-btn {
@@ -136,6 +150,10 @@ display: inline-block;
     transition: transform 0.3s ease;
 }
 
+.yes-btn:hover {
+    transform: scale(1.06);
+}
+
 .no-btn {
     z-index: 1;
     position: relative;
@@ -143,12 +161,110 @@ display: inline-block;
     cursor: default;
 }
 
-.final-text{
-    font-size: 22px;
-    line-height: 1.4;
-    text-align: center;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgba(255,240,240,0.5);
-    border-radius: 12px;
+/* ─── Приглашение (после Yes) ────────────────────────────────────────────── */
+.final-text {
+    width: 100%;
+    max-width: 460px;
+    padding: 22px 26px 20px;
+    background: rgba(255, 255, 255, 0.55);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    animation: rise 0.7s ease both;
+}
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.final-kicker {
+    margin: 0;
+    font-family: "Aldrich", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.final-heading {
+    margin: 6px 0 14px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.final-heading::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 1px;
+    margin: 12px auto 0;
+    background: var(--blush);
+}
+
+.final-lead {
+    margin: 0 0 18px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+
+.final-details {
+    margin: 0;
+    display: grid;
+    gap: 12px;
+    text-align: left;
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.final-details dt {
+    font-family: "Aldrich", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.final-details dd {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--ink);
+}
+
+.final-sign {
+    margin: 20px 0 0;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    color: var(--blush);
+}
+
+/* ─── Мобильные ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .letter-window {
+        padding: 26px 18px 20px;
+        gap: 14px;
+    }
+
+    .sticker { width: 130px; }
+    .cat     { width: 140px; }
+    .btn     { width: 96px; }
+    .buttons { gap: 18px; }
+
+    .final-text { padding: 18px 16px; }
+
+    .detail {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
 }
