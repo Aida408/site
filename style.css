@@ -125,16 +125,23 @@ body {
     box-shadow: 0 8px 22px rgba(74, 63, 53, 0.3);
 }
 
-/* Кот сидит в самом углу экрана */
+/* Кот: на первом экране рядом со стикером */
 .cat {
+    flex: 0 0 auto;
+    display: block;
+    width: 190px;
+    height: auto;
+    transition: width 0.4s ease;
+}
+
+/* После Yes уезжает в самый угол экрана */
+.cat.corner {
     position: absolute;
     right: 16px;
     bottom: 12px;
     width: 130px;
-    height: auto;
     pointer-events: none;
     filter: drop-shadow(0 4px 10px rgba(74, 63, 53, 0.25));
-    transition: width 0.4s ease;
 }
 
 /* ─── Кнопки ─────────────────────────────────────────────────────────────── */
@@ -275,7 +282,8 @@ body {
 
     .sticker,
     .final-video { width: 200px; }
-    .cat { width: 84px; right: 6px; bottom: 6px; }
+    .cat { width: 130px; }
+    .cat.corner { width: 84px; right: 6px; bottom: 6px; }
     .btn     { width: 96px; }
     .buttons { gap: 18px; }
 

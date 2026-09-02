@@ -66,6 +66,10 @@ yesBtn.addEventListener("click", () => {
 
     catImg.src = "cat_dance.gif";
 
+    // Кот уезжает в угол экрана
+    letter.appendChild(catImg);
+    catImg.classList.add("corner");
+
     document.querySelector(".letter-window").classList.add("final");
 
     buttons.style.display = "none";
